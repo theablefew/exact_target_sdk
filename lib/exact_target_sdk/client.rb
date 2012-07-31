@@ -230,11 +230,12 @@ class Client
   #
   # Returns the raw savon response.
   def execute_request(method)
+    _sdk_config = config
     begin
       response = client.request(method) do
         soap.xml do |xml|
           xml.s :Envelope,
-              "xmlns" => config[:namespace],
+              "xmlns" => _sdk_config[:namespace],
               "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema",
               "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
               "xmlns:s" => "http://www.w3.org/2003/05/soap-envelope",
@@ -247,11 +248,11 @@ class Client
               xml.a :ReplyTo do
                 xml.a :Address, "http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous"
               end
-              xml.a :To, config[:endpoint], "s:mustUnderstand" => "1"
+              xml.a :To, _sdk_config[:endpoint], "s:mustUnderstand" => "1"
               xml.o :Security, "s:mustUnderstand" => "1" do
                 xml.o :UsernameToken, "o:Id" => "test" do
-                  xml.o :Username, config[:username]
-                  xml.o :Password, config[:password]
+                  xml.o :Username, _sdk_config[:username]
+                  xml.o :Password, _sdk_config[:password]
                 end
               end
             end
