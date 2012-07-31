@@ -213,11 +213,12 @@ class Client
   
   # Constructs and saves the savon client using provided config.
   def initialize_client!
+    _sdk_config = config
     self.client = ::Savon::Client.new do
-      wsdl.endpoint = config[:endpoint]
-      wsdl.namespace = config[:namespace]
-      http.open_timeout = config[:open_timeout]
-      http.read_timeout = config[:read_timeout]
+      wsdl.endpoint = _sdk_config[:endpoint]
+      wsdl.namespace = _sdk_config[:namespace]
+      http.open_timeout = _sdk_config[:open_timeout]
+      http.read_timeout = _sdk_config[:read_timeout]
     end
   end
 
