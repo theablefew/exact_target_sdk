@@ -210,7 +210,7 @@ class Client
   private
 
   attr_accessor :config, :client
-  
+
   # Constructs and saves the savon client using provided config.
   def initialize_client!
     _sdk_config = config
@@ -280,7 +280,7 @@ class Client
       timeout.set_backtrace(e.backtrace)
       raise timeout
     rescue Exception => e
-      raise ::ExactTargetSDK::UnknownError, e
+      raise e
     end
   end
 
