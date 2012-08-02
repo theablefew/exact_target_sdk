@@ -262,6 +262,8 @@ class Client
             end
           end
         end
+
+        logger.info soap.instance_variable_get(:@xml) if _sdk_config[:log_soap_body]
       end
 
       if response.http_error?
