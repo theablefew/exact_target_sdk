@@ -1,5 +1,19 @@
 = ExactTarget SDK
 
+== Version 0.9.0 (by Martin Gordon)
+* Implemented AudienceItem object
+* Implemented Email object
+* Implemented EmailSendDefinition object
+* Implemented List object
+* Implemented SendClassification object
+* Implemented SendDefinitionList object
+* Implemented SubscriberList object
+* Added ID, Lists, and Status to Subscriber
+* Allowed Retrieve call to not require a filter
+* Unknown exceptions during a SOAP request no longer hide the exception
+* Added config option to log SOAP body
+* Fixed bugs in Client caused by Savon's change of context within a block
+
 == Version 0.8.0
 * Implemented APIProperty object
 * Implemented DataExtension object
