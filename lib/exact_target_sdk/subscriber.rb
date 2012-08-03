@@ -12,16 +12,20 @@ module ExactTargetSDK
 # property to the current email address, and the EmailAddress property to the
 # new email address.
 class Subscriber < APIObject
+  STATUSES = %w{ Active Bounced Deleted Held Unsubscribed }
 
   property 'ID'
+  property 'Status'
   property 'SubscriberKey', :required => true
   property 'EmailAddress', :required => true
   property 'EmailTypePreference'
   array_property 'Attributes'
+  array_property 'Lists'
 
   before_validation :sync_subscriber_key_and_email_address
 
   validates 'EmailTypePreference', :inclusion => { :allow_nil => true, :in => %w( HTML Text ) }
+  validates 'Status', :inclusion => { :allow_nil => true, :in => STATUSES }
 
   private
 
