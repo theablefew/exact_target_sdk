@@ -80,7 +80,7 @@ class Client
   #   InvalidAPIObject  if any of the provided objects don't pass validation
   #
   # Returns a RetrieveResponse object.
-  def Retrieve(object_type_name, filter, *properties)
+  def Retrieve(object_type_name, filter = nil, *properties)
     object_type_name = object_type_name.type_name if object_type_name.respond_to?(:type_name)
     response = execute_request 'Retrieve' do |xml|
       xml.RetrieveRequestMsg do
@@ -93,9 +93,10 @@ class Client
             xml.Properties(property)
           end
 
-          xml.Filter "xsi:type" => filter.type_name do
-            filter.render!(xml)
-          end
+          unless filter.nil?
+            xml.Filter "xsi:type" => filter.type_name do
+              filter.render!(xml)
+            end
         end
       end
     end
