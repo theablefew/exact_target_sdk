@@ -1,5 +1,8 @@
 = ExactTarget SDK
 
+== Version 0.9.1 (by Martin Gordon)
+* Loosen gem version requirements.
+
 == Version 0.9.0 (by Martin Gordon)
 * Implemented AudienceItem object
 * Implemented Email object
