@@ -97,6 +97,7 @@ class Client
             xml.Filter "xsi:type" => filter.type_name do
               filter.render!(xml)
             end
+          end
         end
       end
     end
