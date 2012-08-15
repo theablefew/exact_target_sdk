@@ -205,6 +205,42 @@ class Client
     PerformResponse.new(response)
   end
 
+  # Invokes the Configure method.
+  #
+  # The provided arguments should each be definitions that are sub-classes
+  # of APIObject.
+  #
+  # Possible exceptions are:
+  #   HTTPError         if an HTTP error (such as a timeout) occurs
+  #   SOAPFault         if a SOAP fault occurs
+  #   Timeout           if there is a timeout waiting for the response
+  #   InvalidAPIObject  if any of the provided objects don't pass validation
+  #
+  # Returns a ConfigureResponse object.
+  def Configure(action, *args)
+    # TODO: implement and accept ConfigureOptions
+
+    configurations = args
+
+    response = execute_request 'Configure' do |xml|
+      xml.ConfigureRequestMsg do
+        xml.Action action
+
+        xml.Configurations do
+          configurations.each do |configuration|
+            xml.Configure "xsi:type" => configuration.type_name do
+              configuration.render!(xml)
+            end
+          end
+        end
+
+        xml.Options  # TODO: support ConfigureOptions
+      end
+    end
+
+    ConfigureResponse.new(response)
+  end
+
   def logger
     config[:logger]
   end
