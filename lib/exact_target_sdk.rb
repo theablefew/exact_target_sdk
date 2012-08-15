@@ -23,6 +23,7 @@ module ExactTargetSDK
   autoload :FilterPart, 'exact_target_sdk/filter_part'
   autoload :List, 'exact_target_sdk/list'
   autoload :PerformResponse, 'exact_target_sdk/perform_response'
+  autoload :PropertyDefinition, 'exact_target_sdk/property_definition'
   autoload :Result, 'exact_target_sdk/result'
   autoload :RetrieveResponse, 'exact_target_sdk/retrieve_response'
   autoload :RetrieveResult, 'exact_target_sdk/retrieve_result'
