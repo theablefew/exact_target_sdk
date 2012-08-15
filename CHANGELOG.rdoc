@@ -1,5 +1,9 @@
 = ExactTarget SDK
 
+== Version 0.10.0 (by Martin Gordon)
+* Add support for Configure method
+* Implemented PropertyDefinition object
+
 == Version 0.9.1 (by Martin Gordon)
 * Loosen gem version requirements.
 
