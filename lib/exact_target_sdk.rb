@@ -36,5 +36,6 @@ module ExactTargetSDK
   autoload :TriggeredSendDefinition, 'exact_target_sdk/triggered_send_definition'
   autoload :UpdateResponse, 'exact_target_sdk/update_response'
   autoload :UpdateResult, 'exact_target_sdk/update_result'
+  autoload :DataFolder, 'exact_target_sdk/data_folder'
 
 end

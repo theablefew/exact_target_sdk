@@ -8,6 +8,7 @@ class EmailSendDefinition < APIObject
   property 'SendDefinitionList'
   property 'SendClassification'
   property 'Email'
+  property 'CategoryID'
 
 end
 

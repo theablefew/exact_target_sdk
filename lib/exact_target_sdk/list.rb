@@ -6,6 +6,7 @@ class List < APIObject
   property 'ListName', :required => true
   property 'Description'
   property 'CreatedDate'
+  property 'CategoryID'
   array_property 'Subscribers'
 end
 

@@ -7,6 +7,7 @@ class Email < APIObject
   property 'Subject'
   property 'HTMLBody'
   property 'TextBody'
+  property 'CategoryID'
 
 end
 
