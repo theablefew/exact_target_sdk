@@ -1,5 +1,9 @@
 = ExactTarget SDK
 
+== Version 0.10.0 (by Corey Pierson)
+* Implemented DataFolder
+* Added CategoryID to Email, List, EmailSendDefinition
+
 == Version 0.10.0 (by Martin Gordon)
 * Add support for Configure method
 * Implemented PropertyDefinition object
