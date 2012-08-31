@@ -1,5 +1,8 @@
 = ExactTarget SDK
 
+== Version 0.10.2 (by Corey Pierson)
+* Implemented SenderProfile
+
 == Version 0.10.0 (by Corey Pierson)
 * Implemented DataFolder
 * Added CategoryID to Email, List, EmailSendDefinition

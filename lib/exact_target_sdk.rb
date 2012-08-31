@@ -29,6 +29,7 @@ module ExactTargetSDK
   autoload :RetrieveResult, 'exact_target_sdk/retrieve_result'
   autoload :SendClassification, 'exact_target_sdk/send_classification'
   autoload :SendDefinitionList, 'exact_target_sdk/send_definition_list'
+  autoload :SenderProfile, 'exact_target_sdk/sender_profile'
   autoload :SimpleFilterPart, 'exact_target_sdk/simple_filter_part'
   autoload :Subscriber, 'exact_target_sdk/subscriber'
   autoload :SubscriberList, 'exact_target_sdk/subscriber_list'
