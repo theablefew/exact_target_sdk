@@ -9,6 +9,7 @@ class EmailSendDefinition < APIObject
   property 'SendClassification'
   property 'Email'
   property 'CategoryID'
+  property 'DeduplicateByEmail'
 
 end
 

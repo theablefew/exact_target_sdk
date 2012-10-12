@@ -3,10 +3,11 @@ module ExactTargetSDK
 class List < APIObject
 
   property 'ID'
-  property 'ListName', :required => true
+  property 'ListName'
   property 'Description'
   property 'CreatedDate'
   property 'Category'
+  property 'ListClassification'
   array_property 'Subscribers'
 end
 
