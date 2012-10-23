@@ -105,6 +105,32 @@ class Client
     RetrieveResponse.new(response)
   end
 
+
+  def RetrieveMore(object_type_name, continue_request_id, filter = nil, *properties)
+    object_type_name = object_type_name.type_name if object_type_name.respond_to?(:type_name)
+    response = execute_request 'Retrieve' do |xml|
+      xml.RetrieveRequestMsg do
+        xml.RetrieveRequest do
+          xml.Options
+          xml.ContinueRequest continue_request_id.to_s
+          xml.ObjectType object_type_name
+
+          properties.each do |property|
+            xml.Properties(property)
+          end
+
+          unless filter.nil?
+            xml.Filter "xsi:type" => filter.type_name do
+              filter.render!(xml)
+            end
+          end
+        end
+      end
+    end
+
+    RetrieveResponse.new(response)
+  end
+
   # Invokes the Update method.
   #
   # The provided arguments should each be sub-classes of APIObject, and each
