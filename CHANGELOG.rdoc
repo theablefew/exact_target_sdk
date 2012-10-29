@@ -1,5 +1,8 @@
 = ExactTarget SDK
 
+== Version 0.10.3 (by Corey Pierson)
+* Implemented more functionality for DataExtensions, isPasteHTML option on emails
+
 == Version 0.10.2 (by Corey Pierson)
 * Implemented SenderProfile
 
