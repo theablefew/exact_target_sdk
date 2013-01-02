@@ -3,11 +3,13 @@ require 'exact_target_sdk/errors'
 
 module ExactTargetSDK
 
+  autoload :Account, 'exact_target_sdk/account'
   autoload :APIObject, 'exact_target_sdk/api_object'
   autoload :APIProperty, 'exact_target_sdk/api_property'
   autoload :Attribute, 'exact_target_sdk/attribute'
   autoload :AudienceItem, 'exact_target_sdk/audience_item'
   autoload :Client, 'exact_target_sdk/client'
+  autoload :ClientID, 'exact_target_sdk/client_id'
   autoload :ComplexFilterPart, 'exact_target_sdk/complex_filter_part'
   autoload :ConfigureResponse, 'exact_target_sdk/configure_response'
   autoload :ContentArea, 'exact_target_sdk/content_area'
