@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.date = %q{2012-01-30}
   s.summary = %q{A simple wrapper for the ExactTarget SOAP API.}
   s.description = %q{Provides an easy-to-use ruby interface into the ExactTarget SOAP API, using the Savon client.}
-  s.authors = [ 'David Dawson', 'Martin Gordon' ]
-  s.email = %q{daws23@gmail.com}
-  s.homepage = %q{https://github.com/daws/exact_target_sdk}
+  s.authors = [ 'David Dawson', 'Martin Gordon', 'Spencer Davis' ]
+  s.email = %q{spencer@promoboxx.com}
+  s.homepage = %q{https://github.com/spencerdavis/exact_target_sdk}
   s.require_paths = [ 'lib' ]
 
   # documentation
