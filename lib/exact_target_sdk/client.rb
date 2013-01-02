@@ -80,10 +80,12 @@ class Client
   #   InvalidAPIObject  if any of the provided objects don't pass validation
   #
   # Returns a RetrieveResponse object.
-  def Retrieve(object_type_name, filter=nil, properties, options=nil)
+  def Retrieve(object_type_name, filter=nil, properties=nil, options=nil)
     object_type_name = object_type_name.type_name if object_type_name.respond_to?(:type_name)
 
+    properties ||= ['ID']
     options ||= {}
+
     query_all_accounts = options.delete(:QueryAllAccounts)
     client_id = options.delete(:ClientID)
 
