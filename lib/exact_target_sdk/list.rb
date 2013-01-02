@@ -9,6 +9,8 @@ class List < APIObject
   property 'Category'
   property 'ListClassification'
   array_property 'Subscribers'
-end
+  property 'CustomerKey'
+  property 'Client'
 
+end
 end
