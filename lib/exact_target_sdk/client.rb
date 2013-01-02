@@ -80,12 +80,31 @@ class Client
   #   InvalidAPIObject  if any of the provided objects don't pass validation
   #
   # Returns a RetrieveResponse object.
-  def Retrieve(object_type_name, filter = nil, *properties)
+  def Retrieve(object_type_name, filter=nil, properties, options=nil)
     object_type_name = object_type_name.type_name if object_type_name.respond_to?(:type_name)
+
+    options ||= {}
+    query_all_accounts = options.delete(:QueryAllAccounts)
+    client_id = options.delete(:ClientID)
+
+    if query_all_accounts && client_id
+      raise StandardError, 'Passed a ClientID for Retrieve with QueryAllAccounts enabled'
+    end
+
     response = execute_request 'Retrieve' do |xml|
       xml.RetrieveRequestMsg do
         xml.RetrieveRequest do
           xml.Options
+
+          if query_all_accounts
+            xml.QueryAllAccounts(true)
+          end
+
+          if client_id
+            xml.ClientIDs do
+              xml.ID(client_id)
+            end
+          end
 
           xml.ObjectType object_type_name
 
@@ -106,7 +125,7 @@ class Client
   end
 
 
-  def RetrieveMore(object_type_name, continue_request_id, filter = nil, *properties)
+  def RetrieveMore(object_type_name, continue_request_id, filter=nil, properties)
     object_type_name = object_type_name.type_name if object_type_name.respond_to?(:type_name)
     response = execute_request 'Retrieve' do |xml|
       xml.RetrieveRequestMsg do
