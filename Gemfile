@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'activemodel'
 gem 'activesupport'
 gem 'guid'
-gem 'savon'
+gem 'savon', '~> 1.2'
 
 group :rake do
   gem 'simple_gem', :require => 'tasks/simple_gem'
