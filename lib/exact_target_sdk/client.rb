@@ -184,6 +184,47 @@ class Client
     UpdateResponse.new(response)
   end
 
+
+  # Invokes the Create method with the UpdateAdd option set.
+  #
+  # The provided arguments should each be sub-classes of APIObject, and each
+  # provided object will be created or updated in order.
+  #
+  # Possible exceptions are:
+  #   HTTPError         if an HTTP error (such as a timeout) occurs
+  #   SOAPFault         if a SOAP fault occurs
+  #   Timeout           if there is a timeout waiting for the response
+  #   InvalidAPIObject  if any of the provided objects don't pass validation
+  #
+  # Returns an CreateResponse object.
+  def UpdateAdd(*args)
+    # TODO: implement and accept CreateOptions
+
+    api_objects = args
+
+    response = execute_request 'Create' do |xml|
+      xml.CreateRequest do
+        xml.Options do
+          xml.SaveOptions do
+            xml.SaveOption do
+              xml.PropertyName('*')
+              xml.SaveAction('UpdateAdd')
+            end
+          end
+        end
+
+        api_objects.each do |api_object|
+          xml.Objects "xsi:type" => api_object.type_name do
+            api_object.render!(xml)
+          end
+        end
+      end
+    end
+
+    CreateResponse.new(response)
+  end
+
+
   # Invokes the Delete method.
   #
   # The provided arguments should each be sub-classes of APIObject, and each
