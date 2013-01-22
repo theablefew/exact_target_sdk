@@ -9,6 +9,7 @@ class Email < APIObject
   property 'TextBody'
   property 'CategoryID'
   property 'IsHTMLPaste'
+  property 'Client'
 
 end
 
