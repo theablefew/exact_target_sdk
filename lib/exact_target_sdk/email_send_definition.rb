@@ -10,6 +10,7 @@ class EmailSendDefinition < APIObject
   property 'Email'
   property 'CategoryID'
   property 'DeduplicateByEmail'
+  property 'SenderProfile'
 
 end
 
