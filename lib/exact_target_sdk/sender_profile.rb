@@ -1,6 +1,7 @@
 module ExactTargetSDK
 
 class SenderProfile < APIObject
+  property 'ObjectID'
   property 'CustomerKey'
   property 'Name'
   property 'Description'
