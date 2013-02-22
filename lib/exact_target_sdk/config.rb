@@ -3,7 +3,7 @@ require 'logger'
 module ExactTargetSDK
 
   DEFAULT_TIMEOUT = 1500
-  DEFAULT_ENDPOINT = 'https://webservice.s4.exacttarget.com/Service.asmx'
+  DEFAULT_ENDPOINT = 'https://webservice.exacttarget.com/Service.asmx'
   DEFAULT_NAMESPACE = 'http://exacttarget.com/wsdl/partnerAPI'
 
   # Globally configures and retrieves configuration for the ExactTarget SDK.
