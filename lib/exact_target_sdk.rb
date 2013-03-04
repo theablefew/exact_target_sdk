@@ -24,6 +24,7 @@ module ExactTargetSDK
   autoload :EmailSendDefinition, 'exact_target_sdk/email_send_definition'
   autoload :FilterPart, 'exact_target_sdk/filter_part'
   autoload :List, 'exact_target_sdk/list'
+  autoload :ListSubscriber, 'exact_target_sdk/list_subscriber'
   autoload :PerformResponse, 'exact_target_sdk/perform_response'
   autoload :PropertyDefinition, 'exact_target_sdk/property_definition'
   autoload :Result, 'exact_target_sdk/result'
